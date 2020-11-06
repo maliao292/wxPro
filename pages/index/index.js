@@ -1,4 +1,4 @@
-import {homeSwiper,homeCatitems} from '../../request/index'
+import {homeSwiper,homeCatitems,homeFloors} from '../../request/index'
 Page({
 
   /**
@@ -6,7 +6,8 @@ Page({
    */
   data: {
     swiperList:[],
-    cartItems:[]
+    cartItems:[],
+    floorArr:[]
   },
 
   /**
@@ -19,10 +20,14 @@ Page({
       })
     })
     homeCatitems().then(res=>{
-      console.log(res)
-      
       this.setData({
         cartItems:res.message
+      })
+    })
+    homeFloors().then(res=>{
+      console.log(res)
+       this.setData({
+        floorArr:res.message
       })
     })
   },

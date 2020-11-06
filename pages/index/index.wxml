@@ -16,3 +16,13 @@
         </view>
       </view>
   </view>
+  <view class='floor' wx:for='{{floorArr}}' wx:key='index'>
+    <view class='floorTitle'>
+      <image class="" src="{{item.floor_title.image_src}}" lazy-load="false" />
+        <view class='floorPicShow'>
+           <view wx:for="{{item.product_list}}" wx:for-item='child' wx:for-index='ind' wx:key="index">
+             <image src="{{child.image_src}}"></image>
+           </view>
+        </view>
+    </view>
+  </view>

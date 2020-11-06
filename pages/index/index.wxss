@@ -18,3 +18,21 @@
   width: 128rpx;
   height: 140rpx;
 }
+.floorTitle > image {
+  width: 750rpx;
+  height: 59rpx;
+}
+.floorPicShow > view:first-child {
+  float: left;
+}
+.floorPicShow > view:first-child image {
+  width: 180rpx;
+  height: 301rpx;
+}
+.floorPicShow > view:not(:first-child) {
+  float: right;
+}
+.floorPicShow > view:not(:first-child) image {
+  width: 233rpx;
+  height: 188rpx;
+}
