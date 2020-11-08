@@ -22,17 +22,19 @@
   width: 750rpx;
   height: 59rpx;
 }
-.floorPicShow > view:first-child {
+.floorPicShow navigator {
   float: left;
+  width: 33.33%;
+  padding: 2px;
+  box-sizing: border-box;
 }
-.floorPicShow > view:first-child image {
-  width: 180rpx;
-  height: 301rpx;
+.floorPicShow navigator image {
+  width: 100%;
 }
-.floorPicShow > view:not(:first-child) {
-  float: right;
+.floorPicShow > navigator:nth-last-child(-n+4) {
+  height: 207.97413793rpx;
 }
-.floorPicShow > view:not(:first-child) image {
-  width: 233rpx;
-  height: 188rpx;
+.floorPicShow > navigator:nth-last-child(-n+4) image {
+  width: 100%;
+  height: 100%;
 }

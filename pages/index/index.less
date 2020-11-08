@@ -23,18 +23,23 @@
    height: 59rpx;
 }
 .floorPicShow{
-  >view:first-child{
+  // padding: 20rpx;
+  navigator{
     float: left;
+    width: 33.33%;
+    padding: 2px;
+    box-sizing: border-box;
     image{
-      width: 180rpx;
-      height: 301rpx;
+      width:100%
     }
   }
-  >view:not(:first-child){
-    float: right;
-      image{
-      width: 233rpx;
-      height: 188rpx;
+  >navigator:nth-last-child(-n+4){
+    height: 386 / 232 * 250/2rpx;
+    image{
+      // 232 * 386
+      width: 100%;
+      height: 100%;
     }
   }
-}
+
+} 

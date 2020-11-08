@@ -20,9 +20,9 @@
     <view class='floorTitle'>
       <image class="" src="{{item.floor_title.image_src}}" lazy-load="false" />
         <view class='floorPicShow'>
-           <view wx:for="{{item.product_list}}" wx:for-item='child' wx:for-index='ind' wx:key="index">
-             <image src="{{child.image_src}}"></image>
-           </view>
+           <navigator wx:for="{{item.product_list}}" wx:for-item='child' wx:for-index='ind' wx:key="index">
+             <image mode="{{ind === 0?'widthFix':'scaleToFill'}}"  src="{{child.image_src}}"></image>
+           </navigator>
         </view>
     </view>
-  </view>
+  </view>  
