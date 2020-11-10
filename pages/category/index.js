@@ -1,18 +1,28 @@
 // pages/category/index.js
+import {categoryData} from '../../request/index'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    listArr:[],
+    activeMenu:0
   },
-
+  choseClass(e){
+    console.log(e.currentTarget.dataset.ind)
+    let activeMenu = e.currentTarget.dataset.ind
+    this.setData({activeMenu})
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    categoryData().then(res=>{
+      this.setData({
+        listArr:res.message
+      })
+    })
   },
 
   /**

@@ -1,2 +1,22 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="categoryCon">
+    <view class="leftMenu">
+        <view wx:for="{{listArr}}" wx:key='cat_id' class="{{activeMenu==index?'activeMenu':''}}" bindtap='choseClass' data-ind='{{index}}'>
+            {{item.cat_name}}
+        </view>
+    </view>
+    <view class="rightCon">
+        <view wx:for="{{listArr}}" wx:key='cat_id' class="{{activeMenu==index?'activeMenu':''}}">
+            <view wx:for="{{item.children}}" wx:key='cat_id' wx:for-item="item2" wx:for-index="ind2">
+               <view class="item2Name">
+                  / {{item2.cat_name}} /
+               </view>
+                <view class="prductCon">
+                    <view wx:for="{{item2.children}}" wx:key='cat_id' wx:for-item="item3" wx:for-index="ind3">
+                        <image class="" src="{{item3.cat_icon}}" mode="widthFix" lazy-load="true" binderror="" bindload="" />
+                        <view>{{item3.cat_name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

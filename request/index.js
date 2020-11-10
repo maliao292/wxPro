@@ -15,3 +15,6 @@ const request = (params) => {
 export const homeSwiper = () =>  request({url:defaultUrl+'/home/swiperdata'})
 export const homeCatitems = () =>  request({url:defaultUrl+'/home/catitems'})
 export const homeFloors = () =>  request({url:defaultUrl+'/home/floordata'})
+
+// 分类
+export const categoryData = () =>  request({url:defaultUrl+'/categories'})
