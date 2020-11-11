@@ -39,7 +39,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
   "appid": "wx43e1ad65498d5b7d",
-  "projectname": "myWxPro",
+  "projectname": "wxPro",
   "debugOptions": {
     "hidedInDevtools": []
   },
@@ -61,6 +61,12 @@
       "list": [
         {
           "name": "分类",
+          "pathName": "pages/category/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/category/index",
           "pathName": "pages/category/index",
           "scene": null
         }

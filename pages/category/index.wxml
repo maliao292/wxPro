@@ -1,5 +1,7 @@
 <view class="categoryCon">
-    <view class="leftMenu">
+    <Search></Search>
+    <view class='cates_container'>
+            <view class="leftMenu">
         <view wx:for="{{listArr}}" wx:key='cat_id' class="{{activeMenu==index?'activeMenu':''}}" bindtap='choseClass' data-ind='{{index}}'>
             {{item.cat_name}}
         </view>
@@ -19,4 +21,7 @@
             </view>
         </view>
     </view>
+    </view>
+      
+
 </view>
