@@ -1,27 +1,27 @@
-.categoryCon {
+.categoryCon > view {
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
+  height: calc(100vh - 36px);
   background-color: #E5E6E2;
 }
-.categoryCon .leftMenu {
+.categoryCon > view .leftMenu {
   flex-shrink: 0;
   width: 100px;
   text-align: center;
   padding: 0 5px;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
 }
-.categoryCon .leftMenu view {
+.categoryCon > view .leftMenu view {
   margin-bottom: 2px;
   background-color: #F1F3F1;
   padding: 5px;
 }
-.categoryCon .leftMenu view.activeMenu {
+.categoryCon > view .leftMenu view.activeMenu {
   color: #f00;
   position: relative;
 }
-.categoryCon .leftMenu view.activeMenu::before {
+.categoryCon > view .leftMenu view.activeMenu::before {
   content: '';
   display: inline-block;
   position: absolute;
@@ -31,25 +31,25 @@
   width: 5px;
   background-color: #f00;
 }
-.categoryCon .rightCon {
+.categoryCon > view .rightCon {
   width: 100%;
   flex-shrink: 1;
   text-align: center;
   background-color: #fff;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
 }
-.categoryCon .rightCon .item2Name {
+.categoryCon > view .rightCon .item2Name {
   padding: 20px 0;
 }
-.categoryCon .rightCon .prductCon {
+.categoryCon > view .rightCon .prductCon {
   display: flex;
   flex-wrap: wrap;
 }
-.categoryCon .rightCon .prductCon > view {
+.categoryCon > view .rightCon .prductCon > view {
   width: 33%;
   padding: 0 10px;
 }
-.categoryCon .rightCon .prductCon > view image {
+.categoryCon > view .rightCon .prductCon > view image {
   width: 100%;
 }
