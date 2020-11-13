@@ -37,31 +37,6 @@ Page({
             console.log(this.data.scrollTopArr)
             this.setData({ scrp: this.data.scrollTopArr[activeMenu] })
         });
-
-
-
-
-
-
-        // 
-
-        // let query = wx.createSelectorQuery().in(this);
-        // query.selectViewport().scrollOffset()
-        // query.select(toViewid).boundingClientRect();
-        // // query.select("#FilterNav").boundingClientRect();
-        // // query.select("#" + ((letter == '#') ? 'other' : letter)).boundingClientRect();
-        // let _this = this
-        // query.exec(function(res) {
-        //     console.log(res[1].top)
-
-        //     _this.setData({ scrp: res[1].top })
-        //         // wx.pageScrollTo({
-        //         //     scrollTop: res[1].top,
-        //         //     duration: 0
-        //         // });
-        // });
-
-
     },
     /**
      * 生命周期函数--监听页面加载
