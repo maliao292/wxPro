@@ -14,11 +14,11 @@
             <view class="item2Name">
               / {{item2.cat_name}} /
             </view>
-            <view class="prductCon">
-              <view wx:for="{{item2.children}}" wx:key="cat_id" wx:for-item="item3" wx:for-index="ind3">
-                <image class="" src="{{item3.cat_icon}}" mode="widthFix"  binderror="" bindload="" />
+            <view class="prductCon">  
+              <navigator wx:for="{{item2.children}}" url="/pages/goods_list/index?aid={{item3.cat_id}}" wx:key="cat_id" wx:for-item="item3" wx:for-index="ind3">
+                <!-- <image class="" src="{{item3.cat_icon}}" mode="widthFix"  binderror="" bindload="" /> -->
                 <view>{{item3.cat_name}}</view>
-              </view>
+              </navigator>
             </view>
           </view>
         </view>

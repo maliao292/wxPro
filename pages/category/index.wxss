@@ -46,10 +46,10 @@
   display: flex;
   flex-wrap: wrap;
 }
-.categoryCon > view .rightCon .prductCon > view {
+.categoryCon > view .rightCon .prductCon navigator {
   width: 33%;
   padding: 0 10px;
 }
-.categoryCon > view .rightCon .prductCon > view image {
+.categoryCon > view .rightCon .prductCon navigator image {
   width: 100%;
 }

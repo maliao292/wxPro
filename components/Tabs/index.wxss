@@ -1,0 +1,13 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+}
+.tabs .tabItem {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+}
+.tabs .tabItem.active {
+  color: #f00;
+  border-bottom: 3px solid #f00;
+}

@@ -1,8 +1,9 @@
-.categoryCon >view{
+.categoryCon>view {
     display: flex;
     justify-content: space-between;
     height: ~'calc(100vh - 36px)';
     background-color: #E5E6E2;
+
     .leftMenu {
         flex-shrink: 0;
         width: 100px;
@@ -10,6 +11,7 @@
         padding: 0 5px;
         height: 100%;
         overflow: auto;
+
         view {
             margin-bottom: 2px;
             background-color: #F1F3F1;
@@ -24,7 +26,7 @@
                     display: inline-block;
                     position: absolute;
                     top: 5px;
-                    bottom:5px;
+                    bottom: 5px;
                     left: 10px;
                     width: 5px;
                     background-color: #f00;
@@ -32,26 +34,31 @@
             }
         }
     }
-    .rightCon{
+
+    .rightCon {
         width: 100%;
         flex-shrink: 1;
         text-align: center;
         background-color: #fff;
         height: 100%;
         overflow: auto;
-       .item2Name{
-           padding: 20px 0;
-       }
-        .prductCon{
+
+        .item2Name {
+            padding: 20px 0;
+        }
+
+        .prductCon {
             display: flex;
             // justify-content: space-between;
             flex-wrap: wrap;
-            >view{
-            width: 33%;
-            padding: 0 10px;
-            image{
-                width: 100%;
-            }
+
+            navigator {
+                width: 33%;
+                padding: 0 10px;
+
+                image {
+                    width: 100%;
+                }
             }
         }
     }
