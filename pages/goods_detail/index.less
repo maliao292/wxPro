@@ -1,0 +1,76 @@
+.swiperCon {
+    swiper {
+        width: 750rpx;
+        height: 750*0.75rpx;
+        text-align: center;
+
+        image {
+            width: 750 * 0.75rpx;
+        }
+    }
+
+    .pro_price {
+        color: #f00;
+        padding: 10px;
+    }
+
+    .pro_name {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        .name {
+            border-right: 2px solid #999;
+            margin-right: 10px;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .collect {
+            width: 50px;
+            flex-shrink: 0;
+            text-align: left;
+        }
+    }
+
+    .proIntroduce {
+        padding-bottom: 20px;
+    }
+
+    .proTab {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        width: 100%;
+        align-items: center;
+        >view {
+            text-align: center;
+            height: 46px;
+        }
+
+        .tab_item {
+            width: 50/3%;
+            padding-top: 5px;
+        }
+
+        .incar{
+            width: 25%;
+            line-height: 46px;
+            background-color: #FFA500;
+            color: #fff;
+        }
+        .buy {
+            width: 25%;
+            line-height: 46px;
+            background-color: #EB4450;
+            color: #fff;
+        }
+    }
+}

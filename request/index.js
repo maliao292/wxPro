@@ -12,11 +12,28 @@ const request = (params) => {
         })
     })
 }
-export const homeSwiper = () => request({ url: defaultUrl + '/home/swiperdata' })
-export const homeCatitems = () => request({ url: defaultUrl + '/home/catitems' })
-export const homeFloors = () => request({ url: defaultUrl + '/home/floordata' })
+export const homeSwiper = () => request({
+    url: defaultUrl + '/home/swiperdata'
+})
+export const homeCatitems = () => request({
+    url: defaultUrl + '/home/catitems'
+})
+export const homeFloors = () => request({
+    url: defaultUrl + '/home/floordata'
+})
 
 // 分类
-export const categoryData = () => request({ url: defaultUrl + '/categories' })
-    // 商品列表搜索
-export const goodsList = params => request({ url: defaultUrl + '/goods/search', data: params })
+export const categoryData = () => request({
+    url: defaultUrl + '/categories'
+})
+// 商品列表搜索
+export const goodsList = params => request({
+    url: defaultUrl + '/goods/search',
+    data: params
+})
+
+// 商品详情
+export const goodsDetails = params => request({
+    url: defaultUrl + '/goods/detail',
+    data: params
+})

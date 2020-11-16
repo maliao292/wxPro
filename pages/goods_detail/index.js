@@ -1,18 +1,50 @@
-// pages/goods_detail/index.js
+import {
+  goodsDetails
+} from '../../request/index'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    proDetails: {
+      pics: [],
+      goods_name: '',
+      goods_introduce: '',
+      goods_price: ''
+    }
+  },
 
+  showBig(e) {
+    console.log();
+    let urls = this.data.proDetails.pics.map(res => res.pics_mid)
+    let current = urls[e.currentTarget.dataset.ind]
+    wx.previewImage({
+      current, // 当前显示图片的http链接
+      urls // 需要预览的图片http链接列表
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    goodsDetails(options).then(res => {
+      let {
+        pics,
+        goods_name,
+        goods_introduce,
+        goods_price
+      } = res.message
+      this.setData({
+        proDetails: {
+          pics,
+          goods_name,
+          goods_introduce,
+          goods_price
+        }
+      })
+    })
   },
 
   /**

@@ -1,2 +1,33 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view class="swiperCon">
+    <swiper class="" autoplay interval="5000" indicator-dots>
+        <swiper-item wx:for="{{proDetails.pics}}" wx:key="index" bindtap='showBig' data-ind='{{index}}'>
+            <image class="" src="{{item.pics_mid}}" mode="widthFix" />
+        </swiper-item>
+    </swiper>
+    <view class="pro_price">￥ {{proDetails.goods_price}}</view>
+    <view class="pro_name">
+        <view class="name">{{proDetails.goods_name}}</view>
+        <view class="collect">收藏</view>
+    </view>
+    <!-- 富文本 -->
+    <view class="proIntroduce">
+        <rich-text class="" nodes="{{proDetails.goods_introduce}} "></rich-text>
+    </view>
+    <!-- 自定义导航栏 -->
+    <view class="proTab">
+        <view class=" tab_item">
+            <view class="iconfont icon-kefu"></view>
+            <view>客服</view>
+        </view>
+        <view class=" tab_item">
+            <view class="iconfont  icon-yixianshi-"></view>
+            <view>分享</view>
+        </view>
+        <view class=" tab_item">
+            <view class="iconfont icon-gouwuche"></view>
+            <view>购物车</view>
+        </view>
+        <view class="incar">加入购物车</view>
+        <view class="buy">立即购买</view>
+    </view>
+</view>
