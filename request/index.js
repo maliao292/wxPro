@@ -1,5 +1,10 @@
 let defaultUrl = 'https://api-hmugo-web.itheima.net/api/public/v1'
+let requestNum = 0
 const request = (params) => {
+    requestNum++
+    wx.showLoading({
+        title: '加载中',
+    })
     return new Promise((resolve, reject) => {
         wx.request({
             ...params,
@@ -8,6 +13,13 @@ const request = (params) => {
             },
             fail(err) {
                 reject(err)
+            },
+            complete() {
+                requestNum--
+
+                if (requestNum <= 0) {
+                    wx.hideLoading()
+                }
             }
         })
     })

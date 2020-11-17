@@ -14,9 +14,26 @@ Page({
       goods_price: ''
     }
   },
+  joinCart() {
+    let cart = wx.getStorageSync('shoppingCart') || [];
+    let ind = cart.findIndex(res => {
+      return res.goods_id === this.data.proDetails.goods_id
+    })
+    if (ind === -1) {
+      cart.push({ ...this.data.proDetails, num: 1 })
+    } else {
+      let num = cart[ind]['num'] + 1
+      cart.splice(ind, 1, { ...this.data.proDetails, num })
+    }
+    wx.setStorageSync('shoppingCart', cart)
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      mask: true, // 防止频繁操作
+    });
 
+  },
   showBig(e) {
-    console.log();
     let urls = this.data.proDetails.pics.map(res => res.pics_mid)
     let current = urls[e.currentTarget.dataset.ind]
     wx.previewImage({
@@ -34,14 +51,15 @@ Page({
         pics,
         goods_name,
         goods_introduce,
-        goods_price
+        goods_price,
+        goods_id
       } = res.message
       this.setData({
         proDetails: {
           pics,
           goods_name,
           goods_introduce,
-          goods_price
+          goods_price, goods_id
         }
       })
     })
