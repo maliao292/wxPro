@@ -1,4 +1,17 @@
 <view>
-    <Search />
-    <Tabs tabs='{{tabs}}' bindtabsItemChange='tabsItemChange'/>
+  <Search />
+  <Tabs tabs="{{tabs}}" bindtabsItemChange="tabsItemChange" />
+  <view>
+    <view class="goods_con" wx:for="{{proList}}" wx:key='goods_id'>
+      <navigator class="" target="" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+        <view class="goods_img">
+          <image class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=386535230,3956809074&fm=26&gp=0.jpg'}}" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+        </view>
+        <view class="goods_name">
+          <view>{{item.goods_name}}</view>
+          <text class="" selectable="false" space="false" decode="false">{{item.goods_price}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
 </view>
