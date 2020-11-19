@@ -1,1 +1,85 @@
-/* pages/cart/index.wxss */
+.cart_address {
+  flex-shrink: 0;
+}
+.cart_address .phone {
+  float: right;
+}
+.address_btn {
+  flex-shrink: 0;
+}
+.line {
+  border: 1px solid #ccc;
+}
+.cart_List {
+  height: 100%;
+  flex-shrink: 1;
+  overflow: auto;
+}
+.cart_List .cartgoods_item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  align-items: center;
+}
+.cart_List .cartgoods_item .cart_checkbox {
+  flex: 1;
+}
+.cart_List .cartgoods_item .cart_pic {
+  flex: 2;
+  text-align: center;
+}
+.cart_List .cartgoods_item .cart_pic image {
+  width: 80%;
+}
+.cart_List .cartgoods_item .cart_det {
+  align-self: flex-start;
+  flex: 5;
+}
+.cart_List .cartgoods_item .cart_det .goods_name {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.cart_List .cartgoods_item .cart_det .cart_num {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.cart_List .cartgoods_item .cart_det .cart_num .btn {
+  display: inline-block;
+  border: 1px solid #ccc;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 18px;
+  color: #999;
+}
+.cart_List .cartgoods_item .cart_det .cart_num .goodsnum {
+  display: inline-block;
+  padding: 5px;
+}
+.revice_address_row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  flex-shrink: 0;
+}
+.cartMsg {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartMsg .settle {
+  display: inline-block;
+  width: 30%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #f00;
+  color: #fff;
+}

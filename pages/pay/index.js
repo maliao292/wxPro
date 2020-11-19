@@ -1,66 +1,105 @@
-// pages/pay/index.js
+// pages/cart/index.js
 Page({
+    data: {
+        addresssObj: {
+            errMsg: '',
+            userName: null,
+            nationalCode: null,
+            telNumber: null,
+            postalCode: null,
+            provinceName: null,
+            cityName: null,
+            countyName: null,
+            detailInfo: null,
+        },
+        cart: [],
+        cheackAll: false,
+        totalPrice: 0,
+        totalNmu: 0
+    },
+    addNum(e) {
+        let obj = e.currentTarget.dataset
+        console.log(1 + Number(obj.num), obj);
+        if (this.data.cart[obj.ind]['num'] == 1 && obj.num == -1) {
+            wx.showModal({
+                title: '提示',
+                content: '是否删除该商品',
+                success: res => {
+                    if (res.confirm) {
+                        this.data.cart.splice(obj.ind, 1)
+                        this.setShoppingCart(this.data.cart)
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
+                }
+            })
+        } else {
+            this.data.cart[obj.ind]['num'] += Number(obj.num)
+            this.setShoppingCart(this.data.cart)
 
-  },
+        }
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
 
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    },
+    prochange(e) {
+        let { ind } = e.currentTarget.dataset
 
-  },
+        this.data.cart[ind]['checked'] = !this.data.cart[ind]['checked']
+        this.setShoppingCart(this.data.cart)
+    },
+    checkAll() {
+        this.setData({
+            cheackAll: !this.data.cheackAll
+        })
+        this.data.cart.forEach(res => {
+            res.checked = this.data.cheackAll
+        })
+        this.setShoppingCart(this.data.cart)
+    },
+    // 获取收货地址
+    handlechooseAddress() {
+        wx.chooseAddress({
+            success: (result) => {
+                wx.setStorageSync('addresss', result);
+                this.setData({
+                    addresssObj: wx.getStorageSync('addresss')
+                })
+            },
+        });
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+    },
+    setShoppingCart(cart) {
+        let num = 0
+        let price = 0
+        let cheackAll = true
+        cart.forEach(item => {
+            if (item.checked) {
+                num += item.num
+                price += item.num * item.goods_price
 
-  },
+            } else {
+                cheackAll = false
+            }
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+        });
+        wx.setStorageSync('shoppingCart', cart)
+        this.setData({
+            cart,
+            cheackAll: cart.length !== 0 ? cheackAll : false,
+            totalPrice: price,
+            totalNmu: num
+        })
+    },
+    onShow(option) {
+        this.setData({
+            addresssObj: wx.getStorageSync('addresss')
+        })
+        this.setData({
+            cart: wx.getStorageSync('shoppingCart') || []
+        })
+        this.setShoppingCart(this.data.cart)
+    }
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -1,0 +1,106 @@
+.cart_address {
+    flex-shrink: 0;
+
+    .phone {
+        float: right;
+
+    }
+
+
+}
+
+.address_btn {
+    flex-shrink: 0;
+
+}
+
+.line {
+    border: 1px solid #ccc;
+}
+
+.cart_List {
+    height: 100%;
+    flex-shrink: 1;
+    overflow: auto;
+
+    .cartgoods_item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10rpx;
+        align-items: center;
+
+        .cart_checkbox {
+            flex: 1;
+
+        }
+
+        .cart_pic {
+            flex: 2;
+            text-align: center;
+
+            image {
+                width: 80%;
+            }
+        }
+
+        .cart_det {
+            align-self: flex-start;
+            flex: 5;
+
+            .goods_name {
+                word-break: break-all;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
+
+            .cart_num {
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+
+                .btn {
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    width: 20px;
+                    height: 20px;
+                    text-align: center;
+                    line-height: 18px;
+                    color: #999;
+
+                }
+
+                .goodsnum {
+                    display: inline-block;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}
+
+.revice_address_row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.cartMsg {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .settle {
+        display: inline-block;
+        width: 30%;
+        height: 80rpx;
+        line-height: 80rpx;
+        text-align: center;
+        background-color: #f00;
+        color: #fff;
+    }
+}

@@ -1,8 +1,62 @@
 <view class="revice_address_row">
-  <view class="address_btn">
-    <button bindtap='handlechooseAddress' type="primary" plain>获取收货地址
-    </button>
+  <view class="address_btn" wx:if="{{!addresssObj.userName}}">
+    <button bindtap="handlechooseAddress" type="primary" plain>获取收货地址</button>
+    <view class="line"></view>
+  </view>
+  <view class="cart_address" wx:else>
+    <view class="cart_name">
+      <text>{{addresssObj.userName}}</text>
+      <text class="phone">{{addresssObj.telNumber}}</text>
+    </view>
+    <view class="cart_text">
+      {{addresssObj.provinceName +addresssObj.cityName+addresssObj.countyName +addresssObj.detailInfo }}
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class="cart_List">
+    <view class="cartgoods_item" wx:for="{{cart}}" wx:key="goods_id">
+      <view class="cart_checkbox">
+        <checkbox-group bindchange="prochange" data-ind='{{index}}'>
+          <checkbox checked="{{item.checked}}" />
+        </checkbox-group>
+      </view>
+      <navigator class="cart_pic">
+        <image mode="widthFix" src="{{item.goods_small_logo}}" />
+      </navigator>
+      <view class="cart_det">
+        <view class="goods_name">
+          {{item.goods_name}}
+        </view>
+        <view class="cart_num">
+          <text> {{item.goods_price}}</text>
+          <view class="changeNum">
+            <text class="btn" bindtap="addNum" data-num="-1" data-ind='{{index}}'>-</text>
+            <text class="goodsnum">{{item.num}}</text>
+            <text class="btn" bindtap="addNum" data-num="1" data-ind='{{index}}'>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cartMsg">
     <view>
- </view>
+      全选
+      <checkbox-group bindchange="checkAll">
+        <checkbox checked="{{cheackAll}}" />
+      </checkbox-group>
+        
+      
+    </view>
+    <view>
+      <view>合计：{{totalPrice}}</view>
+    </view>
+    <view class="settle">
+      <navigator url="/pages/pay/index">
+      结算（{{totalNmu}}）
+        
+      </navigator>
+        
+    </view>
   </view>
 </view>
