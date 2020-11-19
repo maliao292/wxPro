@@ -36,9 +36,9 @@ export const homeFloors = () => request({
 
 // 分类
 export const categoryData = () => request({
-    url: defaultUrl + '/categories'
-})
-// 商品列表搜索
+        url: defaultUrl + '/categories'
+    })
+    // 商品列表搜索
 export const goodsList = params => request({
     url: defaultUrl + '/goods/search',
     data: params
@@ -48,4 +48,11 @@ export const goodsList = params => request({
 export const goodsDetails = params => request({
     url: defaultUrl + '/goods/detail',
     data: params
+})
+
+// 登录 
+export const wxlogin = params => request({
+    url: defaultUrl + '/users/wxlogin',
+    data: params,
+    method: 'POST'
 })

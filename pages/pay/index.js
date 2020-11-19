@@ -17,6 +17,17 @@ Page({
         totalPrice: 0,
         totalNmu: 0
     },
+    handelOrderPay() {
+        let token = wx.getStorageSync('token')
+        if (!token) {
+            wx.navigateTo({
+                url: '/pages/auth/index',
+            });
+            return
+        }
+        console.log('存在存在');
+
+    },
     addNum(e) {
         let obj = e.currentTarget.dataset
         console.log(1 + Number(obj.num), obj);

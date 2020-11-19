@@ -35,7 +35,7 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function(options) {
         this.searchData.cid = options.cid
         goodsList(this.searchData).then(res => {
             this.setData({
@@ -44,20 +44,25 @@ Page({
         })
 
     },
-    onReachBottom: function (e) {
+    onShow() {
+        let currentPages = getCurrentPages();
+
+        console.log(currentPages[0]);
+    },
+    onReachBottom: function(e) {
         if (!this.isEnd) {
             this.searchData.pagenum++
-            goodsList(this.searchData).then(res => {
-                this.setData({
-                    proList: [...this.data.proList, ...res.message.goods]
+                goodsList(this.searchData).then(res => {
+                    this.setData({
+                        proList: [...this.data.proList, ...res.message.goods]
+                    })
+                    let maxPage = Math.ceil(res.message.total / this.searchData.pagesize)
+                    if (maxPage <= Number(res.message.pagenum)) {
+                        this.isEnd = true
+
+                    }
+
                 })
-                let maxPage = Math.ceil(res.message.total / this.searchData.pagesize)
-                if (maxPage <= Number(res.message.pagenum)) {
-                    this.isEnd = true
-
-                }
-
-            })
         }
 
     }

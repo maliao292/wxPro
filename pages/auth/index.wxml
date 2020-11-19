@@ -1,0 +1,2 @@
+<button class="default" type="primary" plain="{{true}}" bindgetuserinfo="uf" open-type="getUserInfo" >获取信息</button>
+  

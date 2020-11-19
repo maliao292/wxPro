@@ -31,7 +31,7 @@
     <view>
       <view>合计：{{totalPrice}}</view>
     </view>
-    <view class="settle">
+    <view class="settle" bindtap="handelOrderPay">
       支付（{{totalNmu}}）
     </view>
   </view>
